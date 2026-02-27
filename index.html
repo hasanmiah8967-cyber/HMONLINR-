@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ariyan Store</title>
+<style>
+body{
+ font-family: Arial;
+ background:#eef3ff;
+ margin:0;
+}
+
+.header{
+ background:linear-gradient(to right,#0d47a1,#1976d2);
+ color:white;
+ padding:15px;
+ text-align:center;
+ font-size:22px;
+}
+
+.notice{
+ background:white;
+ margin:15px;
+ padding:12px;
+ border-radius:10px;
+ text-align:center;
+}
+
+.card{
+ background:white;
+ margin:15px;
+ padding:20px;
+ border-radius:12px;
+ text-align:center;
+ box-shadow:0px 2px 5px rgba(0,0,0,0.2);
+}
+
+.sold{
+ color:red;
+ font-size:26px;
+ font-weight:bold;
+}
+
+.available{
+ color:green;
+ font-size:26px;
+ font-weight:bold;
+}
+
+button{
+ width:100%;
+ padding:12px;
+ border:none;
+ border-radius:10px;
+ font-size:16px;
+ background:#1976d2;
+ color:white;
+}
+
+button:disabled{
+ background:#ccc;
+}
+
+.features{
+ display:flex;
+ justify-content:space-around;
+ margin:15px;
+}
+
+.box{
+ background:white;
+ padding:15px;
+ border-radius:12px;
+ width:30%;
+ text-align:center;
+ box-shadow:0px 2px 5px rgba(0,0,0,0.2);
+}
+
+.info{
+ background:white;
+ margin:15px;
+ padding:15px;
+ border-radius:12px;
+}
+
+.footer{
+ text-align:center;
+ padding:10px;
+ color:gray;
+}
+
+/* WhatsApp Button */
+.whatsapp{
+ position:fixed;
+ bottom:20px;
+ right:20px;
+ background:#25d366;
+ color:white;
+ padding:12px 18px;
+ border-radius:50px;
+ text-decoration:none;
+ font-weight:bold;
+}
+
+/* Payment Page */
+#payment{
+ display:none;
+ padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+ ARIYAN STORE
+</div>
+
+<div class="notice">
+ Restocking Soon | Instant Delivery After Payment
+</div>
+
+<div class="card">
+ <h2>ACCOUNTS AVAILABLE</h2>
+<h3 style="color:green;">200 IDs Available</h3>
+<a href="https://wa.me/918016287096?text=mujhe irchtch id chaahie.।" target="_blank">
+  <button style="padding:12px 25px; font-size:18px; background:#25D366; color:white; border:none; border-radius:6px; cursor:pointer;">
+    Buy Now (WhatsApp)
+  </button>
+</a>
+
+<div class="features">
+ <div class="box">🔒<br>Secure<br>100% Safe</div>
+ <div class="box">⚡<br>Instant<br>Auto Delivery</div>
+ <div class="box">✅<br>Verified<br>Quality IDs</div>
+</div>
+
+<div class="info">
+ <h3>Important Info</h3>
+ <ul>
+  <li>Do not change password via third-party software.</li>
+  <li>Avoid bulk syncing multiple IDs from same IP.</li>
+  <li>Contact support if login issue.</li>
+ </ul>
+</div>
+
+<div class="footer">
+ © 2026 Ariyan Store
+</div>
+
+<!-- WhatsApp Button -->
+<a class="whatsapp" href="https://wa.me/918016287096" target="_blank">
+ WhatsApp
+</a>
+
+<!-- Payment Page -->
+<div id="payment">
+ <h2>Payment Page</h2>
+ <p>Pay using UPI / QR</p>
+  <img src="qr.png" width="200">
+ <br><br>
+ <button onclick="alert('Payment Received! Order Processing...')">I Have Paid</button>
+</div>
+
+<script>
+// Change stock here (20 = sold out, 200 = available)
+let stock = 50;
+
+let status = document.getElementById("status");
+let btn = document.getElementById("buyBtn");
+
+if(stock==1){
+ status.innerHTML = "available";
+ status.className = "available";
+ btn.disabled = false;
+ btn.innerHTML = "Buy Now";
+}
+
+function goPayment(){
+ document.querySelector(".card").style.display="none";
+ document.querySelector(".features").style.display="none";
+ document.querySelector(".info").style.display="none";
+ document.querySelector(".notice").style.display="none";
+ document.getElementById("payment").style.display="block";
+}
+</script>
+
+</body>
+</html>
